@@ -1,0 +1,317 @@
+[gd_scene load_steps=34 format=3 uid="uid://dhch28ehk3cls"]
+
+[ext_resource type="Texture2D" uid="uid://b7i50hckagy65" path="res://cygwty/grasstgrass.png" id="1_d4l1n"]
+[ext_resource type="Texture2D" uid="uid://cnjeajhl2onmo" path="res://ŵkw/brickerman.png" id="2_aug6a"]
+[ext_resource type="Script" uid="uid://cdha5qourb6qc" path="res://scripts -hwwyty rw h twý hwrýw/ǧtyty/Dialog_Scene.gd" id="4_1lqpx"]
+[ext_resource type="Script" uid="uid://baelu7ley4wq7" path="res://scripts -hwwyty rw h twý hwrýw/imagine_rotation_to_player.gd" id="4_5lx1o"]
+[ext_resource type="PackedScene" uid="uid://c45vogvofafft" path="res://ŵrņty/player.tscn" id="4_cwvij"]
+[ext_resource type="Script" uid="uid://ciq7t6fqaseie" path="res://scripts -hwwyty rw h twý hwrýw/ǧtyty/Dialog_Text_Node.gd" id="5_geuao"]
+[ext_resource type="PackedScene" uid="uid://cv08h3xpcwkbq" path="res://ŵrņty/HUD.tscn" id="11_576kp"]
+[ext_resource type="Script" uid="uid://dbkcgxnsxlsu0" path="res://scripts -hwwyty rw h twý hwrýw/brick_loader.gd" id="11_pm1kc"]
+[ext_resource type="Texture2D" uid="uid://jgrtvqrh27ou" path="res://ŵkw/yaamayaama.png" id="12_ahw8f"]
+[ext_resource type="Texture2D" uid="uid://co16c7n4siwst" path="res://ŵkw/brick_sandy.png" id="13_8ekfm"]
+[ext_resource type="AudioStream" uid="uid://cj0x0g2s701kd" path="res://swhy/funky.mp3" id="13_fm1ob"]
+[ext_resource type="PackedScene" uid="uid://c8p31tukaxp60" path="res://ŵrņty/brick.tscn" id="14_j7r5u"]
+[ext_resource type="Texture2D" uid="uid://dr50n8qrow6m2" path="res://ŵkw/brick_greystone.png" id="14_qhex4"]
+[ext_resource type="Texture2D" uid="uid://shupp5cowg7x" path="res://ŵkw/bricker_monster.png" id="15_6n0rf"]
+[ext_resource type="Texture2D" uid="uid://cvv7acbkp3br7" path="res://ŵkw/brick_it_has_holes.png" id="15_k44hi"]
+[ext_resource type="Texture2D" uid="uid://56pw4tmllc8" path="res://ŵkw/brick_white.png" id="16_wn52o"]
+[ext_resource type="Texture2D" uid="uid://bh5nxamka3mmh" path="res://ŵkw/brick_black.png" id="17_h6t7r"]
+[ext_resource type="Script" uid="uid://cxra4pwohepg8" path="res://yaama follow.gd" id="19_dg4j6"]
+[ext_resource type="Script" uid="uid://b1btelqt3lsp5" path="res://forest loader.gd" id="19_dwrch"]
+[ext_resource type="PackedScene" uid="uid://cixa5uv8s4hys" path="res://ŵrņty/pukekothingy.tscn" id="20_dg4j6"]
+[ext_resource type="Texture2D" uid="uid://d0pq1236hjqa7" path="res://cygwty/gravel 128.png" id="21_dwrch"]
+[ext_resource type="Script" uid="uid://benaq1nnlhdq1" path="res://brick_spawner.gd" id="22_g58rw"]
+
+[sub_resource type="Environment" id="Environment_jonk3"]
+background_mode = 1
+background_color = Color(1, 1, 1, 1)
+background_energy_multiplier = 1.1
+tonemap_exposure = 0.9
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.519449, 0.522225, 0.558975, 1)
+fog_light_energy = 4.99
+fog_density = 1.0275
+fog_sky_affect = 0.0
+fog_height = 5.0
+fog_height_density = -0.032
+fog_depth_end = 70.0
+adjustment_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l35ce"]
+specular_mode = 2
+albedo_color = Color(0.8372, 0.91, 0.546, 1)
+albedo_texture = ExtResource("1_d4l1n")
+metallic_specular = 0.0
+roughness = 0.0
+uv1_scale = Vector3(700, 700, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_45a3n"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6a6bc"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vgxdh"]
+radius = 0.6
+height = 4.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_geuao"]
+radius = 0.654564
+height = 3.81506
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dg4j6"]
+size = Vector3(8.32446, 22.1705, 1.88818)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_geuao"]
+size = Vector3(13.9701, 10.9584, 2.74988)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g58rw"]
+albedo_texture = ExtResource("21_dwrch")
+uv1_scale = Vector3(500, 500, 500)
+uv2_offset = Vector3(500, 0, 500)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ttcrt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lxpgs"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jonk3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 0.909352, 0.416027, 0, -0.416027, 0.909352, 0, 4.76381, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.21362, 1.79763, -0.687989)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1000, -1.93204e-08, 0, 8.74228e-05, -0.221, 0, 0, 0, 1000, -0.877175, 0, 5.15524)
+layers = 3
+material_override = SubResource("StandardMaterial3D_l35ce")
+mesh = SubResource("BoxMesh_45a3n")
+skeleton = NodePath("../WorldEnvironment")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+collision_layer = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_6a6bc")
+
+[node name="man" type="Sprite3D" parent="."]
+transform = Transform3D(-0.439734, 0, -1.64111, 0, 1.81, 0, 1.64111, 0, -0.439734, -3.13975, 3.52064, 3.01495)
+layers = 3
+texture = ExtResource("2_aug6a")
+script = ExtResource("4_5lx1o")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="man"]
+transform = Transform3D(1, 0, 4.47035e-08, 0, 1, 0, -4.47035e-08, 0, 1, 0.0999999, 0, 0)
+collision_layer = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="man/StaticBody3D"]
+transform = Transform3D(1, 0, 1.49012e-08, 0, 1, 0, -1.49012e-08, 0, 1, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_vgxdh")
+
+[node name="Dialog_Scene_Node" type="Area3D" parent="man/StaticBody3D" node_paths=PackedStringArray("next_node", "gui_node")]
+collision_layer = 17
+script = ExtResource("4_1lqpx")
+name_colour = Color(0.89, 0.25454, 0.1424, 1)
+next_node = NodePath("Dialog_Text_Node")
+gui_node = NodePath("../../../Control")
+person_name = "brickerman"
+metadata/_custom_type_script = "uid://cdha5qourb6qc"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="man/StaticBody3D/Dialog_Scene_Node"]
+shape = SubResource("CapsuleShape3D_geuao")
+
+[node name="Dialog_Text_Node" type="Node" parent="man/StaticBody3D/Dialog_Scene_Node" node_paths=PackedStringArray("Next_node", "gui_node")]
+script = ExtResource("5_geuao")
+dialog_text = "yo yo yo, hows it hangin?"
+Next_node = NodePath("Dialog_Text_Node")
+gui_node = NodePath("../../../../Control")
+metadata/_custom_type_script = "uid://ciq7t6fqaseie"
+
+[node name="Dialog_Text_Node" type="Node" parent="man/StaticBody3D/Dialog_Scene_Node/Dialog_Text_Node" node_paths=PackedStringArray("Next_node", "gui_node")]
+script = ExtResource("5_geuao")
+dialog_text = "you're not planning on argueing with me. are you?"
+Next_node = NodePath("Dialog_Text_Node")
+gui_node = NodePath("../../../../../Control")
+metadata/_custom_type_script = "uid://ciq7t6fqaseie"
+
+[node name="Dialog_Text_Node" type="Node" parent="man/StaticBody3D/Dialog_Scene_Node/Dialog_Text_Node/Dialog_Text_Node" node_paths=PackedStringArray("gui_node")]
+script = ExtResource("5_geuao")
+dialog_text = "because if you are, then may god have mercy on you"
+gui_node = NodePath("../../../../../../Control")
+metadata/_custom_type_script = "uid://ciq7t6fqaseie"
+
+[node name="player" parent="." node_paths=PackedStringArray("Gui_control_node") instance=ExtResource("4_cwvij")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -28.3628, 4, 0)
+Gui_control_node = NodePath("../Control")
+
+[node name="brick_thrower" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.81969, -5.85448)
+script = ExtResource("11_pm1kc")
+
+[node name="yaama" parent="brick_thrower" instance=ExtResource("14_j7r5u")]
+transform = Transform3D(-0.12941, 0, -0.482963, 0, 0.5, 0, 0.482963, 0, -0.12941, 103.626, -1.81969, 8.65819)
+naturally_spawning = true
+given_name = "yaama"
+given_image = ExtResource("12_ahw8f")
+
+[node name="sandy" parent="brick_thrower" instance=ExtResource("14_j7r5u")]
+transform = Transform3D(-0.12941, 0, -0.482963, 0, 0.5, 0, 0.482963, 0, -0.12941, -5.10851, -0.81969, 14.3808)
+naturally_spawning = true
+given_name = "sandy"
+given_image = ExtResource("13_8ekfm")
+
+[node name="gregory" parent="brick_thrower" instance=ExtResource("14_j7r5u")]
+transform = Transform3D(-0.12941, 0, -0.482963, 0, 0.5, 0, 0.482963, 0, -0.12941, -8, 0.18031, 3.85448)
+naturally_spawning = true
+given_name = "gregory"
+given_image = ExtResource("14_qhex4")
+
+[node name="casey" parent="brick_thrower" instance=ExtResource("14_j7r5u")]
+transform = Transform3D(-0.12941, 0, -0.482963, 0, 0.5, 0, 0.482963, 0, -0.12941, -7.78335, -0.81969, 10.3046)
+naturally_spawning = true
+given_name = "casey"
+given_image = ExtResource("15_k44hi")
+
+[node name="wendy" parent="brick_thrower" instance=ExtResource("14_j7r5u")]
+transform = Transform3D(-0.12941, 0, -0.482963, 0, 0.5, 0, 0.482963, 0, -0.12941, 0.51764, -0.31969, 15.9226)
+naturally_spawning = true
+given_name = "wendy"
+given_image = ExtResource("16_wn52o")
+
+[node name="brad" parent="brick_thrower" instance=ExtResource("14_j7r5u")]
+transform = Transform3D(-0.12941, 0, -0.482963, 0, 0.5, 0, 0.482963, 0, -0.12941, -0.871193, 0, 1.31948)
+naturally_spawning = true
+given_name = "brad"
+given_image = ExtResource("17_h6t7r")
+
+[node name="servical_cord" parent="brick_thrower" instance=ExtResource("14_j7r5u")]
+transform = Transform3D(-0.12941, 0, -0.482963, 0, 0.5, 0, 0.482963, 0, -0.12941, 7, -0.81969, 8.85448)
+naturally_spawning = true
+given_name = "servical cord"
+given_image = ExtResource("15_6n0rf")
+
+[node name="Control" parent="." instance=ExtResource("11_576kp")]
+
+[node name="yaamayaama" type="Node3D" parent="."]
+transform = Transform3D(0.999991, -0.00430653, -1.04045e-06, 0.00430651, 0.999986, -0.00306925, 1.42413e-05, 0.00306921, 0.999995, 648.769, -3.98055, 4540.79)
+script = ExtResource("19_dg4j6")
+Set_speed = 0.5
+
+[node name="Sprite3D" type="Sprite3D" parent="yaamayaama"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 1.7177, -0.108228)
+layers = 2049
+texture = ExtResource("12_ahw8f")
+script = ExtResource("4_5lx1o")
+metadata/_edit_group_ = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="yaamayaama/Sprite3D"]
+stream = ExtResource("13_fm1ob")
+volume_db = 3.135
+unit_size = 1.95
+max_db = -3.83
+autoplay = true
+max_distance = 167.52
+panning_strength = 0.0
+parameters/looping = true
+
+[node name="Area3D" type="Area3D" parent="yaamayaama/Sprite3D"]
+collision_layer = 2051
+collision_mask = 2051
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="yaamayaama/Sprite3D/Area3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.0202522, -0.673168, 0.0304766)
+shape = SubResource("BoxShape3D_dg4j6")
+
+[node name="Dialog_Scene_Node" type="Area3D" parent="yaamayaama" node_paths=PackedStringArray("next_node", "gui_node")]
+collision_layer = 2065
+script = ExtResource("4_1lqpx")
+name_colour = Color(0.95, 0.862442, 0.1995, 1)
+next_node = NodePath("Dialog_Text_Node")
+gui_node = NodePath("../../Control")
+person_name = "yaama-yaama"
+metadata/_custom_type_script = "uid://cdha5qourb6qc"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="yaamayaama/Dialog_Scene_Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.57843, 0.827301, -0.169128)
+shape = SubResource("BoxShape3D_geuao")
+
+[node name="Dialog_Text_Node" type="Node" parent="yaamayaama/Dialog_Scene_Node" node_paths=PackedStringArray("Next_node", "gui_node")]
+script = ExtResource("5_geuao")
+dialog_text = "im gonna kill you"
+Next_node = NodePath("Dialog_Text_Node")
+gui_node = NodePath("../../../Control")
+metadata/_custom_type_script = "uid://ciq7t6fqaseie"
+
+[node name="Dialog_Text_Node" type="Node" parent="yaamayaama/Dialog_Scene_Node/Dialog_Text_Node" node_paths=PackedStringArray("gui_node")]
+script = ExtResource("5_geuao")
+dialog_text = "with a gun."
+gui_node = NodePath("../../../../Control")
+metadata/_custom_type_script = "uid://ciq7t6fqaseie"
+
+[node name="forest" type="Node" parent="."]
+script = ExtResource("19_dwrch")
+Treecount = 2000
+zRangeMax = 300
+xRangeMax = 300
+
+[node name="RigidBody3D" parent="." instance=ExtResource("20_dg4j6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.0844, 1, -9)
+seed = -5368
+
+[node name="RigidBody3D2" parent="." instance=ExtResource("20_dg4j6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.4273, 1.4405, -16.8018)
+seed = 12556
+
+[node name="RigidBody3D3" parent="." instance=ExtResource("20_dg4j6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -129.391, 1.4405, -58.7918)
+seed = -519
+
+[node name="RigidBody3D4" parent="." instance=ExtResource("20_dg4j6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.60134, 1.4405, 162.084)
+seed = 156
+
+[node name="RigidBody3D5" parent="." instance=ExtResource("20_dg4j6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.2252, 1.4405, -142.202)
+seed = 31811
+
+[node name="RigidBody3D6" parent="." instance=ExtResource("20_dg4j6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -142.895, 1.44052, 88.408)
+seed = -16674
+
+[node name="RigidBody3D7" parent="." instance=ExtResource("20_dg4j6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.4934, 1.44051, -174.511)
+seed = 4906
+
+[node name="RigidBody3D8" parent="." instance=ExtResource("20_dg4j6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.3195, 1.4405, 118.221)
+seed = -829
+
+[node name="RigidBody3D9" parent="." instance=ExtResource("20_dg4j6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 186.65, 1.44051, -169.097)
+seed = -44
+
+[node name="RigidBody3D10" parent="." instance=ExtResource("20_dg4j6")]
+transform = Transform3D(0.998702, 0, 0, 0, 0.998702, 0, 0, 0, 0.998702, -73.711, 1.44051, -9.34841)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1000, 0, 0, 0, 0.221, 0, 0, 0, 1000, 0, -0.829, 900)
+material_override = SubResource("StandardMaterial3D_g58rw")
+mesh = SubResource("BoxMesh_ttcrt")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
+collision_layer = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
+shape = SubResource("BoxShape3D_lxpgs")
+
+[node name="brick spawner" type="Node3D" parent="." node_paths=PackedStringArray("brickpointer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.30629, 8.35004, 4.64754)
+script = ExtResource("22_g58rw")
+brickpointer = NodePath("../brick_thrower")
+
+[connection signal="body_entered" from="yaamayaama/Sprite3D/Area3D" to="yaamayaama" method="_on_area_3d_body_entered"]

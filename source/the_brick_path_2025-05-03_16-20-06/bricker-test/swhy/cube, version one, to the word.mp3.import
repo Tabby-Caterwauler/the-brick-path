@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://beykkv1wbeoa7"
+path="res://.godot/imported/cube, version one, to the word.mp3-58b08ff312483f2be4b3afcbc07593ec.mp3str"
+
+[deps]
+
+source_file="res://swhy/cube, version one, to the word.mp3"
+dest_files=["res://.godot/imported/cube, version one, to the word.mp3-58b08ff312483f2be4b3afcbc07593ec.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

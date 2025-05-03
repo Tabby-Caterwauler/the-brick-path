@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=3 uid="uid://c45vogvofafft"]
+
+[ext_resource type="Script" uid="uid://cn512m0t4oj2n" path="res://scripts -hwwyty rw h twý hwrýw/player.gd" id="1_f3vlk"]
+[ext_resource type="AudioStream" uid="uid://dfgpbcenr346i" path="res://swhy/grass_step1.mp3" id="2_yom3u"]
+[ext_resource type="AudioStream" uid="uid://di6rvcco3k4fq" path="res://swhy/grass_step2.mp3" id="3_2loi2"]
+[ext_resource type="AudioStream" uid="uid://djr2d47jk0mbw" path="res://swhy/grass_step3.mp3" id="4_kyw5a"]
+[ext_resource type="AudioStream" uid="uid://d0741m2wwqdwu" path="res://swhy/grass_step4.mp3" id="5_kgloh"]
+[ext_resource type="AudioStream" uid="uid://ctrkv81hvjcf1" path="res://swhy/grass_step5.mp3" id="6_sjh3g"]
+[ext_resource type="AudioStream" uid="uid://cw10ntq7dfpa0" path="res://swhy/ambient whirl1.mp3" id="7_f2x2g"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_060nd"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_56vfq"]
+random_pitch = 1.15
+streams_count = 5
+stream_0/stream = ExtResource("2_yom3u")
+stream_1/stream = ExtResource("3_2loi2")
+stream_1/weight = 1.855
+stream_2/stream = ExtResource("4_kyw5a")
+stream_3/stream = ExtResource("5_kgloh")
+stream_3/weight = 0.265
+stream_4/stream = ExtResource("6_sjh3g")
+stream_4/weight = 1.456
+
+[node name="player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+script = ExtResource("1_f3vlk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2.785, 0, 0, 0, 2.785, 0, 0, 0, 2.785, 0.0245199, -0.134, 0.024826)
+shape = SubResource("CapsuleShape3D_060nd")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="camera_Pivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00540543, -0.0173893, -0.018786)
+
+[node name="Camera3D" type="Camera3D" parent="camera_Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.64098, 1.40896, 0.421016)
+current = true
+far = 70.0
+
+[node name="throw_place" type="Node3D" parent="camera_Pivot/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.642178, 0.447039, -4.58778)
+
+[node name="RayCast3D" type="RayCast3D" parent="camera_Pivot/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 4.18, 0, 0.426799, -0.0694892, -0.965926)
+collision_mask = 16
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="walking_grass" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_56vfq")
+volume_db = -17.985
+pitch_scale = 0.7
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_f2x2g")
+volume_db = -29.425
+pitch_scale = 0.7
+autoplay = true
+parameters/looping = true

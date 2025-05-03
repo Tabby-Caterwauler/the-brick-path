@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://cixa5uv8s4hys"]
+
+[ext_resource type="Script" uid="uid://34o7y3ytbam7" path="res://ŵrņty/krkmovearound.gd" id="1_c5ckf"]
+[ext_resource type="Texture2D" uid="uid://c2qg712i6681p" path="res://ŵkw/pukeko.png" id="1_guuje"]
+[ext_resource type="Script" uid="uid://baelu7ley4wq7" path="res://scripts -hwwyty rw h twý hwrýw/imagine_rotation_to_player.gd" id="3_lgk5m"]
+[ext_resource type="AudioStream" uid="uid://b2fqw0llnuu8a" path="res://swhy/krkswhy1.mp3" id="4_khklj"]
+[ext_resource type="AudioStream" uid="uid://gf2t3i730fst" path="res://swhy/krkswhy2.mp3" id="5_0x38w"]
+[ext_resource type="AudioStream" uid="uid://crrgw8xgodwuh" path="res://swhy/krkswhy3.mp3" id="6_ewrhf"]
+[ext_resource type="AudioStream" uid="uid://58vp01gn0kvm" path="res://swhy/krkswhy4.mp3" id="7_aanmq"]
+[ext_resource type="AudioStream" uid="uid://dsogk1lstlvi0" path="res://swhy/gwasirahkrk.mp3" id="8_0x38w"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ntiw2"]
+random_pitch = 1.33
+streams_count = 4
+stream_0/stream = ExtResource("4_khklj")
+stream_1/stream = ExtResource("5_0x38w")
+stream_2/stream = ExtResource("6_ewrhf")
+stream_3/stream = ExtResource("7_aanmq")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c5ckf"]
+size = Vector3(2.9, 4, 2.9)
+
+[node name="RigidBody3D" type="RigidBody3D"]
+lock_rotation = true
+script = ExtResource("1_c5ckf")
+waitmin = 5.0
+waitmax = 8.0
+walkmin = 7.0
+SPEED = 0.1
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1, 0)
+texture = ExtResource("1_guuje")
+script = ExtResource("3_lgk5m")
+
+[node name="pointer" type="Node3D" parent="."]
+
+[node name="reset" type="Timer" parent="."]
+wait_time = 1.555
+autostart = true
+
+[node name="wait" type="Timer" parent="."]
+wait_time = 7.826
+
+[node name="chirp" type="AudioStreamPlayer3D" parent="."]
+stream = SubResource("AudioStreamRandomizer_ntiw2")
+volume_db = 0.145
+
+[node name="chirptimer" type="Timer" parent="chirp"]
+
+[node name="killnox" type="Area3D" parent="."]
+collision_layer = 2049
+collision_mask = 2048
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="killnox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.638207, 0)
+shape = SubResource("BoxShape3D_c5ckf")
+debug_fill = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.696816, 0)
+shape = SubResource("BoxShape3D_c5ckf")
+debug_fill = false
+
+[node name="die" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("8_0x38w")
+pitch_scale = 1.34
+
+[connection signal="timeout" from="reset" to="." method="_on_reset_timeout"]
+[connection signal="timeout" from="wait" to="." method="_on_wait_timeout"]
+[connection signal="timeout" from="chirp/chirptimer" to="." method="_on_chirptimer_timeout"]
+[connection signal="body_entered" from="killnox" to="." method="_on_killnox_body_entered"]
+[connection signal="finished" from="die" to="." method="_on_die_finished"]
