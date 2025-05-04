@@ -1,7 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bfpmhffco5yt0"]
-
-[ext_resource type="Texture2D" uid="uid://bv2qcvsvc1au8" path="res://cygwty/fake_dirt.png" id="1_kg3dm"]
-
-[resource]
-albedo_texture = ExtResource("1_kg3dm")
-uv1_scale = Vector3(700, 700, 1)
